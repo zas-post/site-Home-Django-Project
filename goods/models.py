@@ -1,7 +1,3 @@
-from distutils.command import upload
-from email.policy import default
-from pyexpat import model
-from tabnanny import verbose
 from django.db import models
 
 
@@ -44,6 +40,7 @@ class Products(models.Model):
         db_table = "product"
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+        ordering = ('id',)
 
     def __str__(self):
         return f"{self.name} Количество - {self.quantity}"
