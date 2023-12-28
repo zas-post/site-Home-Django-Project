@@ -40,11 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.postgres",
-
     "debug_toolbar",
-
     "main",
     "goods",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -55,7 +54,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
@@ -64,7 +62,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -86,11 +84,11 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'home',
-        'USER': 'home_user',
-        'PASSWORD': '1qaz',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        "NAME": "home",
+        "USER": "home_user",
+        "PASSWORD": "1qaz",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -133,9 +131,9 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-MEDIA_URL = 'media/'
+MEDIA_URL = "media/"
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / "media"
 
 INTERNAL_IPS = [
     # ...
